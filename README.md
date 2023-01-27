@@ -29,10 +29,16 @@
 В настоящий моментданная программа-бот потеряла актуальность, так как игра официально закрылась в России.
 Исключением является адаптация программы для пиратских серверов проекта.
 
-*# Запуск проекта*<br>
+*# Запуск проекта:*
+
 git clone https://github.com/Evgenqr/r2_buff_bot
+
 cd r2_buff_bot
+
 python -m venv venv
+
 venv\scripts\activate
+
 pip install -r requirements.txt
+
 python TrueBuff.py
