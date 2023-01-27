@@ -2,23 +2,17 @@ import os
 import time
 import cv2
 import numpy as np
-# import pyautogui
 import pyscreenshot as ImageGrab
 import pytesseract
 import mouse
 from win32api import keybd_event
-# import win32api
 import win32con
-# from PIL import Image
 
 
 pytes = pytesseract.pytesseract
 pytes.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR/tesseract'
 time.sleep(1)
 # берем персонажа в таргет с зажатой клавишей f = 0x46
-# x, y = pyautogui.position()  # позиция курсора
-# взять в таргет
-# pyautogui.keyDown('0x46')
 
 
 def target():
@@ -37,7 +31,6 @@ def target():
     # делаем скрин области с названием ги и ником
     screen = np.array(ImageGrab.grab(bbox=(620, 595, 763, 640)))
     filename = 'image.png'
-    # cv2.imshow('window', cv2.cvtColor(screen, cv2.COLOR_BGR2RGB))
     cv2.imwrite(filename, screen)
     image = cv2.imread('Image.png')
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)

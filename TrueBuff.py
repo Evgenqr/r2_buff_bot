@@ -14,8 +14,7 @@ def statrbuff():
     while (True):
         filename = 'image.png'
         # получаем скрин области экрана
-        # screen = np.array(ImageGrab.grab(bbox=(10, 588, 295, 605)))  # work
-        screen = np.array(ImageGrab.grab(bbox=(10, 532, 220, 550)))  # home
+        screen = np.array(ImageGrab.grab(bbox=(10, 532, 220, 550)))
         cv2.imwrite(filename, screen)
         image = cv2.imread('Image.png')
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -31,8 +30,8 @@ def statrbuff():
         if index == -1:  # False
             pass
         else:  # True
-            # вызываем функцию поиска персонажа (делаем скрин и
-            # ищем смайл Привет!
+            # вызываем функцию поиска персонажа
+            # (делаем скрин и ищем смайл Привет!
             sys.argv = [
                 sys.argv[0], "--window", "window.png", "--hi", "hi.png"
             ]

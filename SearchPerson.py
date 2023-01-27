@@ -11,7 +11,6 @@ def Search():
     # ищем смайлик Привет на экране
     # window - область экрана
     # hi - смайлик Привет!
-    # construct the argument parser and parse the arguments
     ap = argparse.ArgumentParser()
     ap.add_argument("-p",
                     "--window",
@@ -20,7 +19,6 @@ def Search():
     ap.add_argument("-w", "--hi", required=True, help="Path to the hi image")
     args = vars(ap.parse_args())
 
-    # load the puzzle and waldo images
     # Когда в чате нашли Привет, ищем смайлик Привет!
     # делаем скрин области экрана
     window = np.array(ImageGrab.grab(bbox=(350, 115, 960, 430)))  # home
@@ -43,11 +41,6 @@ def Search():
     window = cv2.addWeighted(window, 0.55, mask, 0.70, 0)
     window[topLeft[1]:botRight[1], topLeft[0]:botRight[0]] = roi
 
-    # выводим получившиеся изображения
-    # import imutils
-    # cv2.imshow("window", imutils.resize(window, height=650))
-    # cv2.imshow("hi", hi)
-    # cv2.waitKey(0)
     # получаем координаты смайлика Привет и перемещаем туда курсор
     if topXY[0] < 660:
         pyautogui.moveTo(topXY[0] + int(390), botXY[1] + int(150))
